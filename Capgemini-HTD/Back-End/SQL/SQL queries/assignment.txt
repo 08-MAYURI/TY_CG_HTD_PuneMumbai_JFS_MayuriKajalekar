@@ -1,0 +1,455 @@
+
+SQL> SELECT LENGTH ('mayuri')FROM DUAL ;
+
+LENGTH('MAYURI')                                                                
+----------------                                                                
+               6                                                                
+
+SQL> SELECT REVRSE('mayuri')FROM DUAL ;
+SELECT REVRSE('mayuri')FROM DUAL 
+       *
+ERROR at line 1:
+ORA-00904: "REVRSE": invalid identifier 
+
+
+SQL> SELECT REVERSE('mayuri')FROM DUAL ;
+
+REVERS                                                                          
+------                                                                          
+iruyam                                                                          
+
+SQL>  SELECT SUBSTR(‘bangalore’ , 2 , 4),
+  2          SUBSTR('bangalore', -5, 3),
+  3          SUBSTR('bangalore', 11, 4)
+  4          FROM DUAL ;
+ SELECT SUBSTR(‘bangalore’ , 2 , 4),
+               *
+ERROR at line 1:
+ORA-00911: invalid character 
+
+
+SQL> SELECT SUBSTR('bangalore', 2 , 4),
+  2          SUBSTR('bangalore', -5, 3),
+  3          SUBSTR('bangalore', 11, 4)
+  4          FROM DUAL ;
+
+SUBS SUB S                                                                      
+---- --- -                                                                      
+anga alo                                                                        
+
+SQL> SELECT INSTR ('BANANA' , 'NA' , 1 , 2)
+  2   FORM DUAL ;
+ FORM DUAL 
+      *
+ERROR at line 2:
+ORA-00923: FROM keyword not found where expected 
+
+
+SQL> SELECT INSTR ('BANANA' , 'NA' , 1 , 2)
+  2   FROM DUAL ;
+
+INSTR('BANANA','NA',1,2)                                                        
+------------------------                                                        
+                       5                                                        
+
+SQL> SELECT REPLACE ( 'BANGALORE' , ' B ' , ' M ' )
+  2   FROM DUAL ;
+
+REPLACE('                                                                       
+---------                                                                       
+BANGALORE                                                                       
+
+SQL> select replace('BANGALORE','B','M') from dual;
+
+REPLACE('                                                                       
+---------                                                                       
+MANGALORE                                                                       
+
+SQL> SELECT CONCAT( ENAME ,CONCAT (' ', SAL))FROM EMP ;
+
+CONCAT(ENAME,CONCAT('',SAL))                                                    
+---------------------------------------------------                             
+SMITH 800                                                                       
+ALLEN 1600                                                                      
+WARD 1250                                                                       
+JONES 2975                                                                      
+MARTIN 1250                                                                     
+BLAKE 2850                                                                      
+CLARK 2450                                                                      
+SCOTT 3000                                                                      
+KING 5000                                                                       
+TURNER 1500                                                                     
+ADAMS 1100                                                                      
+
+CONCAT(ENAME,CONCAT('',SAL))                                                    
+---------------------------------------------------                             
+JAMES 950                                                                       
+FORD 3000                                                                       
+MILLER 1300                                                                     
+
+14 rows selected.
+
+SQL> SELECT TRIM( BOTH 'E' FROM 'EEEESQLEEE')FROM DUAL ;
+
+TRI                                                                             
+---                                                                             
+SQL                                                                             
+
+SQL> select upper(ename) from emp;
+
+UPPER(ENAM                                                                      
+----------                                                                      
+SMITH                                                                           
+ALLEN                                                                           
+WARD                                                                            
+JONES                                                                           
+MARTIN                                                                          
+BLAKE                                                                           
+CLARK                                                                           
+SCOTT                                                                           
+KING                                                                            
+TURNER                                                                          
+ADAMS                                                                           
+
+UPPER(ENAM                                                                      
+----------                                                                      
+JAMES                                                                           
+FORD                                                                            
+MILLER                                                                          
+
+14 rows selected.
+
+SQL> select lower(ename) from emp;
+
+LOWER(ENAM                                                                      
+----------                                                                      
+smith                                                                           
+allen                                                                           
+ward                                                                            
+jones                                                                           
+martin                                                                          
+blake                                                                           
+clark                                                                           
+scott                                                                           
+king                                                                            
+turner                                                                          
+adams                                                                           
+
+LOWER(ENAM                                                                      
+----------                                                                      
+james                                                                           
+ford                                                                            
+miller                                                                          
+
+14 rows selected.
+
+SQL> select initcap(ename) from emp;
+
+INITCAP(EN                                                                      
+----------                                                                      
+Smith                                                                           
+Allen                                                                           
+Ward                                                                            
+Jones                                                                           
+Martin                                                                          
+Blake                                                                           
+Clark                                                                           
+Scott                                                                           
+King                                                                            
+Turner                                                                          
+Adams                                                                           
+
+INITCAP(EN                                                                      
+----------                                                                      
+James                                                                           
+Ford                                                                            
+Miller                                                                          
+
+14 rows selected.
+
+SQL> select ename ,length(ename) from emp;
+
+ENAME      LENGTH(ENAME)                                                        
+---------- -------------                                                        
+SMITH                  5                                                        
+ALLEN                  5                                                        
+WARD                   4                                                        
+JONES                  5                                                        
+MARTIN                 6                                                        
+BLAKE                  5                                                        
+CLARK                  5                                                        
+SCOTT                  5                                                        
+KING                   4                                                        
+TURNER                 6                                                        
+ADAMS                  5                                                        
+
+ENAME      LENGTH(ENAME)                                                        
+---------- -------------                                                        
+JAMES                  5                                                        
+FORD                   4                                                        
+MILLER                 6                                                        
+
+14 rows selected.
+
+SQL> select ename,reverse(ename) from emp;
+
+ENAME      REVERSE(EN                                                           
+---------- ----------                                                           
+SMITH      HTIMS                                                                
+ALLEN      NELLA                                                                
+WARD       DRAW                                                                 
+JONES      SENOJ                                                                
+MARTIN     NITRAM                                                               
+BLAKE      EKALB                                                                
+CLARK      KRALC                                                                
+SCOTT      TTOCS                                                                
+KING       GNIK                                                                 
+TURNER     RENRUT                                                               
+ADAMS      SMADA                                                                
+
+ENAME      REVERSE(EN                                                           
+---------- ----------                                                           
+JAMES      SEMAJ                                                                
+FORD       DROF                                                                 
+MILLER     RELLIM                                                               
+
+14 rows selected.
+
+SQL>  select substr('ADAM',2,2) FROM EMP;
+
+SU                                                                              
+--                                                                              
+DA                                                                              
+DA                                                                              
+DA                                                                              
+DA                                                                              
+DA                                                                              
+DA                                                                              
+DA                                                                              
+DA                                                                              
+DA                                                                              
+DA                                                                              
+DA                                                                              
+
+SU                                                                              
+--                                                                              
+DA                                                                              
+DA                                                                              
+DA                                                                              
+
+14 rows selected.
+
+SQL> 
+SQL> SELECT SUBSTR('BANGLORE',2,4) FROM DUAL;
+
+SUBS                                                                            
+----                                                                            
+ANGL                                                                            
+
+SQL> SELECT INSTR('BANANA','NA',1,2) FROM DUAL;
+
+INSTR('BANANA','NA',1,2)                                                        
+------------------------                                                        
+                       5                                                        
+
+SQL> SELECT REPLACE('BANGLORE','B','N') FROM DUAL;
+
+REPLACE(                                                                        
+--------                                                                        
+NANGLORE                                                                        
+
+SQL> SELECT CONCAT(ENAME,CONCAT('',SAL)) FROM EMP;
+
+CONCAT(ENAME,CONCAT('',SAL))                                                    
+--------------------------------------------------                              
+SMITH800                                                                        
+ALLEN1600                                                                       
+WARD1250                                                                        
+JONES2975                                                                       
+MARTIN1250                                                                      
+BLAKE2850                                                                       
+CLARK2450                                                                       
+SCOTT3000                                                                       
+KING5000                                                                        
+TURNER1500                                                                      
+ADAMS1100                                                                       
+
+CONCAT(ENAME,CONCAT('',SAL))                                                    
+--------------------------------------------------                              
+JAMES950                                                                        
+FORD3000                                                                        
+MILLER1300                                                                      
+
+14 rows selected.
+
+SQL> SELECT SYDATA FROM DUAL;
+SELECT SYDATA FROM DUAL
+       *
+ERROR at line 1:
+ORA-00904: "SYDATA": invalid identifier 
+
+
+SQL> SELECT SYDATA FROM DUAL;
+SELECT SYDATA FROM DUAL
+       *
+ERROR at line 1:
+ORA-00904: "SYDATA": invalid identifier 
+
+
+SQL>  select mod(2,4) from dual;
+
+  MOD(2,4)                                                                      
+----------                                                                      
+         2                                                                      
+
+SQL> select power(2,4) from dual;
+
+POWER(2,4)                                                                      
+----------                                                                      
+        16                                                                      
+
+SQL> select abs(234) from dual;
+
+  ABS(234)                                                                      
+----------                                                                      
+       234                                                                      
+
+SQL> select sqrt(4
+  2    2  ) from dual;
+  2  ) from dual
+  *
+ERROR at line 2:
+ORA-00907: missing right parenthesis 
+
+
+SQL> select sqrt(4) from duel;
+select sqrt(4) from duel
+                    *
+ERROR at line 1:
+ORA-00942: table or view does not exist 
+
+
+SQL> select sqrt(4) from dual;
+
+   SQRT(4)                                                                      
+----------                                                                      
+         2                                                                      
+
+SQL> select round(34.5,2) from dual;
+
+ROUND(34.5,2)                                                                   
+-------------                                                                   
+         34.5                                                                   
+
+SQL>  select round(34.55,2) from dual;
+
+ROUND(34.55,2)                                                                  
+--------------                                                                  
+         34.55                                                                  
+
+SQL> select round(34.55,1) from dual;
+
+ROUND(34.55,1)                                                                  
+--------------                                                                  
+          34.6                                                                  
+
+SQL> select trunc(34.5) from dual;
+
+TRUNC(34.5)                                                                     
+-----------                                                                     
+         34                                                                     
+
+SQL> select ename,sal+nvl(comm,0);
+select ename,sal+nvl(comm,0)
+                           *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected 
+
+
+SQL>  select ename,sal+nvl(comm,0) from emp;
+
+ENAME      SAL+NVL(COMM,0)                                                      
+---------- ---------------                                                      
+SMITH                  800                                                      
+ALLEN                 1900                                                      
+WARD                  1750                                                      
+JONES                 2975                                                      
+MARTIN                2650                                                      
+BLAKE                 2850                                                      
+CLARK                 2450                                                      
+SCOTT                 3000                                                      
+KING                  5000                                                      
+TURNER                1500                                                      
+ADAMS                 1100                                                      
+
+ENAME      SAL+NVL(COMM,0)                                                      
+---------- ---------------                                                      
+JAMES                  950                                                      
+FORD                  3000                                                      
+MILLER                1300                                                      
+
+14 rows selected.
+
+SQL> select to_date('10-dec-2019') from dual;
+
+TO_DATE('                                                                       
+---------                                                                       
+10-DEC-19                                                                       
+
+SQL> SELECT TO_CHAR('12-MARCH-2019','DD-MM-YY');
+SELECT TO_CHAR('12-MARCH-2019','DD-MM-YY')
+                                         *
+ERROR at line 1:
+ORA-00923: FROM keyword not found where expected 
+
+
+SQL> SELECT TO_CHAR(SYSDATE,'DD-MM-YY') FROM DUAL;
+
+TO_CHAR(                                                                        
+--------                                                                        
+06-10-19                                                                        
+
+SQL> SELECT SYSDATE FROM DUAL;
+
+SYSDATE                                                                         
+---------                                                                       
+06-OCT-19                                                                       
+
+SQL> SELECT SYSTIMESTAMP FROM DUAL;
+
+SYSTIMESTAMP                                                                    
+---------------------------------------------------------------------------     
+06-OCT-19 09.57.46.682000 PM +05:30                                             
+
+SQL> SELECT ADD_MONTHS(SYSDATE,4) FROM DUAL;
+
+ADD_MONTH                                                                       
+---------                                                                       
+06-FEB-20                                                                       
+
+SQL> SELECT MONTHS_BETWEEN(SYSDATE,'31-DEC-19') FROM DUAL;
+
+MONTHS_BETWEEN(SYSDATE,'31-DEC-19')                                             
+-----------------------------------                                             
+                         -2.7769198                                             
+
+SQL> SELECT LAST_DAY
+  2     (SYSDATE) FROM DUAL;
+
+LAST_DAY(                                                                       
+---------                                                                       
+31-OCT-19                                                                       
+
+SQL> SELECT EXTRACT(MONTH FROM SYSDATE) FROM DUAL;
+
+EXTRACT(MONTHFROMSYSDATE)                                                       
+-------------------------                                                       
+                       10                                                       
+
+SQL> SELECT EXTRACT(DAY FROM SYSDATE) FROM  DUAL;
+
+EXTRACT(DAYFROMSYSDATE)                                                         
+-----------------------                                                         
+                      6                                                         
+
+SQL> spool off
